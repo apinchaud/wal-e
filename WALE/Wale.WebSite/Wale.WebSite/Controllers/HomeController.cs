@@ -50,15 +50,18 @@ namespace Wale.WebSite.Controllers
         public string listerLog(string listTermString)
         {
             var res = listTermString.Split('_');
-            String warn = res[0];
             List<Log> listLog = new List<Log>();
             List<string> listTerm = new List<string>();
-            listTerm.Add(warn);
+            for (int i = 0; i < res.Length;i++ )
+            {
+                if(res[i]!="")
+                {
+                    listTerm.Add(res[i]);
+                }
+            }
 
             ElasticSearchStuff.SetUpElasticSearch();
-
             IQueryResponse<Log> reponse = ElasticSearchStuff.SearchLog("log.type", listTerm);
-
             for (var i = 0; i < reponse.Total; i++)
             {
                 listLog.Add(reponse.Documents.ElementAt<Log>(i));
