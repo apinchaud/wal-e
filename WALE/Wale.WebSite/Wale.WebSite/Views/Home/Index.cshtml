@@ -1,0 +1,33 @@
+﻿@using Wale.WebSite.Models;
+
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1></h1>
+                <h2></h2>
+            </hgroup>
+            <p>
+                    <p>Quels type de logs voulez-vous voir apparaitre ?</p>
+            <form name="formCheckLog" method="GET">
+                Info : <input type="checkbox" name="info" value="info" />
+                Warn : <input type="checkbox" name="warn" value="warn" />
+                Error : <input type="checkbox" name="error" value="error" />
+            </form>
+            <div id="resultat">
+                <ul>
+                    @foreach (Log l in Model)
+                    {
+                        <li> Type du log : @l.Type.ToString()</li>
+                        <p>message du log : @l.Message.ToString()</p>
+                    }
+                </ul>
+            </div>
+                
+                
+            </p>
+        </div>
+    </section>
+}
+

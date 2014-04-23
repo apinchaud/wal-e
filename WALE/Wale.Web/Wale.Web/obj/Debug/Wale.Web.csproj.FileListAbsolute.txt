@@ -1,0 +1,185 @@
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Wale.Web.dll.config
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Wale.Web.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Wale.Web.pdb
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Antlr3.Runtime.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\EntityFramework.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Newtonsoft.Json.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Owin.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.Helpers.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.Http.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.Mvc.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.Optimization.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.Razor.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.WebPages.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\WebGrease.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.Helpers.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.Mvc.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.Optimization.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.Razor.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.WebPages.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Newtonsoft.Json.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Antlr3.Runtime.pdb
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.Http.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\EntityFramework.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.Helpers.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.Mvc.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.Optimization.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.Razor.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.WebPages.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.WebPages.Deployment.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.WebPages.Razor.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\System.Net.Http.Formatting.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.Http.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.Http.WebHost.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\EntityFramework.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.Owin.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.Owin.Security.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\obj\Debug\Wale.Web.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\obj\Debug\Wale.Web.pdb
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Json.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Json.pdb
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Nest.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Nest.pdb
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\Nest.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\obj\Debug\Wale.Web.csprojResolveAssemblyReference.cache
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\RazorEngine.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\RazorEngine.pdb
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Web\Wale.Web\bin\RazorEngine.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Wale.Web.dll.config
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Wale.Web.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Wale.Web.pdb
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Antlr3.Runtime.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\EntityFramework.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\EntityFramework.SqlServer.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Json.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Nest.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Nest.Dsl.Factory.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Newtonsoft.Json.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Owin.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\RazorEngine.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Net.Http.Formatting.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.Helpers.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.Http.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.Http.WebHost.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.Mvc.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.Optimization.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.Razor.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.WebPages.Deployment.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.WebPages.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.WebPages.Razor.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\WebGrease.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Json.pdb
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Nest.pdb
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Nest.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Nest.Dsl.Factory.pdb
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Nest.Dsl.Factory.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\RazorEngine.pdb
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\RazorEngine.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.Helpers.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.Mvc.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.Optimization.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.Razor.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.WebPages.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.WebPages.Deployment.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.WebPages.Razor.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Newtonsoft.Json.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Antlr3.Runtime.pdb
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Net.Http.Formatting.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.Http.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\System.Web.Http.WebHost.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\EntityFramework.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\EntityFramework.SqlServer.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.Helpers.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.Mvc.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.Optimization.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.Razor.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.WebPages.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.WebPages.Deployment.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.WebPages.Razor.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\System.Net.Http.Formatting.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.Http.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\System.Web.Http.WebHost.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\EntityFramework.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\EntityFramework.SqlServer.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.AspNet.Identity.Core.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.Owin.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.Owin.Security.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.Owin.Security.Facebook.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.Owin.Security.Google.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.Owin.Security.Twitter.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\bin\fr\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\obj\Debug\Wale.Web.csprojResolveAssemblyReference.cache
+D:\WALE\WALE\Wale.Web\Wale.Web\obj\Debug\Wale.Web.dll
+D:\WALE\WALE\Wale.Web\Wale.Web\obj\Debug\Wale.Web.pdb

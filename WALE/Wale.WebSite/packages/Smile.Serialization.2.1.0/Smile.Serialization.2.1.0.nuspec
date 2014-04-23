@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Smile.Serialization</id>
+    <version>2.1.0</version>
+    <title>Smile Serialization</title>
+    <authors>Huan Hoang</authors>
+    <owners>Huan Hoang</owners>
+    <projectUrl>https://github.com/hoangvanhuanvn/SmileSerializer</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A serialization library which support various types of serializing, including Xml, Json (from Json.NET and from .NET), Base64</description>
+    <summary>A serialization library which support various types of serializing, including Xml, Json (from Json.NET and from .NET), Base64</summary>
+    <tags>XML JSON Base64 Serialization</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.0">
+        <dependency id="Newtonsoft.Json" version="4.5" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

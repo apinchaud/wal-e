@@ -1,0 +1,40 @@
+﻿@model Wale.WebSite.Models.Log
+@using Wale.WebSite.Models;
+@using Newtonsoft.Json;
+@{
+    ViewBag.Title = "Details Page";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+            </hgroup>
+        </div>
+    </section>
+}
+@{
+    Log l = Model;
+}
+
+<div>
+
+    <div class="float-right">
+        <div class="detailLog">
+            <p>Adresse IP : </p>
+            <p>Nom Host : @l.UserStackFrame </p>
+            <p>Date : @l.TimeStamp</p>
+        </div>
+    </div>
+    <p> Type de Log: @l.Level.Name</p>
+    <p>Log ID :</p>
+    <p>Log ID Séquence : @l.SequenceID</p>
+    <p>
+        <textarea rows="4" cols="50" disabled>@l.Message</textarea>
+    </p>
+
+    
+</div>
+
+

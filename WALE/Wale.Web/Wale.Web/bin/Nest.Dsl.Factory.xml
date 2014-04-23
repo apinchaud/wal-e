@@ -1,0 +1,3955 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nest.Dsl.Factory</name>
+    </assembly>
+    <members>
+        <member name="M:Nest.ElasticClientExtensions.Search(Nest.IElasticClient,Nest.Dsl.Factory.SearchBuilder,System.String,System.String,System.String,System.Nullable{Nest.SearchType})">
+            <summary>
+            Synchronously search using dynamic as its return type.
+            </summary>
+        </member>
+        <member name="M:Nest.ElasticClientExtensions.Search``1(Nest.IElasticClient,Nest.Dsl.Factory.SearchBuilder,System.String,System.String,System.String,System.Nullable{Nest.SearchType})">
+            <summary>
+            Synchronously search using T as the return type
+            </summary>
+        </member>
+        <member name="M:Nest.ElasticClientExtensions.SearchAsync(Nest.IElasticClient,Nest.Dsl.Factory.SearchBuilder,System.String,System.String,System.String,System.Nullable{Nest.SearchType})">
+            <summary>
+            Asynchronously search using dynamic as its return type.
+            </summary>
+        </member>
+        <member name="M:Nest.ElasticClientExtensions.SearchAsync``1(Nest.IElasticClient,Nest.Dsl.Factory.SearchBuilder,System.String,System.String,System.String,System.Nullable{Nest.SearchType})">
+            <summary>
+            Asynchronously search using T as the return type
+            </summary>
+        </member>
+        <member name="T:Nest.Dsl.Factory.GeoHashUtils">
+            <summary>
+            Shamelessly stolen from Lucene.Net.Spatial.GeoHash :D
+            </summary>
+        </member>
+        <member name="T:Nest.Dsl.Factory.DateHistogramFacetBuilder">
+            <summary>
+            A facet builder of date histogram facets.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.DateHistogramFacetBuilder.#ctor(System.String)">
+            <summary>
+            Constructs a new date histogram facet with the provided facet logical name.
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.DateHistogramFacetBuilder.Field(System.String)">
+            <summary>
+            The field name to perform the histogram facet. Translates to perform the histogram facet
+            using the provided field as both the {@link #keyField(string)} and {@link #valueField(string)}.
+            </summary>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.DateHistogramFacetBuilder.KeyField(System.String)">
+            <summary>
+            The field name to use in order to control where the hit will "fall into" within the histogram
+            entries. Essentially, using the key field numeric value, the hit will be "rounded" into the relevant
+            bucket controlled by the interval.
+            </summary>
+            <param name="keyField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.DateHistogramFacetBuilder.ValueField(System.String)">
+            <summary>
+            The field name to use as the value of the hit to compute data based on values within the interval
+            (for example, total).
+            </summary>
+            <param name="valueField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.DateHistogramFacetBuilder.Lang(System.String)">
+            <summary>
+            The language of the value script.
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.DateHistogramFacetBuilder.Interval(System.String)">
+            <summary>
+            The interval used to control the bucket "size" where each key value of a hit will fall into. Check
+            the docs for all available values.
+            </summary>
+            <param name="interval"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.DateHistogramFacetBuilder.Zone(System.String)">
+            <summary>
+            Sets the time zone to use when bucketing the values. Can either be in the form of "-10:00" or
+            one of the values listed here: http://joda-time.sourceforge.net/timezones.html.
+            </summary>
+            <param name="zone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.DateHistogramFacetBuilder.Global(System.Boolean)">
+            <summary>
+            Should the facet run in global mode (not bounded by the search query) or not (bounded by
+            the search query). Defaults to <tt>false</tt>.
+            </summary>
+            <param name="global"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.DateHistogramFacetBuilder.Scope(System.String)">
+            <summary>
+            Marks the facet to run in a specific scope.
+            </summary>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.DateHistogramFacetBuilder.FacetFilter(Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            An additional filter used to further filter down the set of documents the facet will run on.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.DateHistogramFacetBuilder.Nested(System.String)">
+            <summary>
+            Sets the nested path the facet will execute on. A match (root object) will then cause all the
+            nested objects matching the path to be computed into the facet.
+            </summary>
+            <param name="nested"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFacetBuilder.Global(System.Boolean)">
+            <summary>
+            Should the facet run in global mode (not bounded by the search query) or not (bounded by
+            the search query). Defaults to <tt>false</tt>.
+            </summary>
+            <param name="global"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFacetBuilder.Scope(System.String)">
+            <summary>
+            Marks the facet to run in a specific scope.
+            </summary>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFacetBuilder.FacetFilter(Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            An additional filter used to further filter down the set of documents the facet will run on.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFacetBuilder.Nested(System.String)">
+            <summary>
+            Sets the nested path the facet will execute on. A match (root object) will then cause all the
+            nested objects matching the path to be computed into the facet.
+            </summary>
+            <param name="nested"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.GeoDistanceFacetBuilder">
+            <summary>
+            A geo distance builder allowing to create a facet of distances from a specific location including the
+            number of hits within each distance range, and aggregated data (like totals of either the distance or
+            custom value fields).
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.#ctor(System.String)">
+            <summary>
+            Constructs a new geo distance with the provided facet name.
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.Field(System.String)">
+            <summary>
+            The geo point field that will be used to extract the document location(s).
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.ValueField(System.String)">
+            <summary>
+            A custom value field (numeric) that will be used to provide aggregated data for each facet (for example, total).
+            </summary>
+            <param name="valueFieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.ValueScript(System.String)">
+            <summary>
+            A custom value script (result is numeric) that will be used to provide aggregated data for each facet (for example, total).
+            </summary>
+            <param name="valueScript"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.Lang(System.String)">
+            <summary>
+            The language of the {@link #valueScript(string)} script.
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.ScriptParam(System.String,System.Object)">
+            <summary>
+            Parameters for {@link #valueScript(string)} to improve performance when executing the same script with different parameters.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.Point(System.Double,System.Double)">
+            <summary>
+            The point to create the range distance facets from.
+            </summary>
+            <param name="lat">Latitude</param>
+            <param name="lon">Longitude</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.Lat(System.Double)">
+            <summary>
+            The latitude to create the range distance facets from.
+            </summary>
+            <param name="lat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.Lon(System.Double)">
+            <summary>
+            The longitude to create the range distance facets from.
+            </summary>
+            <param name="lon"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.Geohash(System.String)">
+            <summary>
+            The geohash of the geo point to create the range distance facets from.
+            </summary>
+            <param name="geohash"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.GeoDistance(Nest.GeoDistance)">
+            <summary>
+            The geo distance type used to compute the distance.
+            </summary>
+            <param name="geoDistance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.AddRange(System.Double,System.Double)">
+            <summary>
+            Adds a range entry with explicit from and to.
+            </summary>
+            <param name="from">The from distance limit</param>
+            <param name="to">The to distance limit</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.AddUnboundedTo(System.Double)">
+            <summary>
+            Adds a range entry with explicit from and unbounded to.
+            </summary>
+            <param name="from">The from distance limit, to is unbounded.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.AddUnboundedFrom(System.Double)">
+            <summary>
+            Adds a range entry with explicit to and unbounded from.
+            </summary>
+            <param name="to">The to distance limit, from is unbounded.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.Unit(Nest.DistanceUnit)">
+            <summary>
+            The distance unit to use. Defaults to {@link org.elasticsearch.common.unit.DistanceUnit#KILOMETERS}
+            </summary>
+            <param name="unit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.Global(System.Boolean)">
+            <summary>
+            Should the facet run in global mode (not bounded by the search query) or not (bounded by
+            the search query). Defaults to <tt>false</tt>.
+            </summary>
+            <param name="global"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.Scope(System.String)">
+            <summary>
+            Marks the facet to run in a specific scope.
+            </summary>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.FacetFilter(Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            An additional filter used to further filter down the set of documents the facet will run on.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceFacetBuilder.Nested(System.String)">
+            <summary>
+            Sets the nested path the facet will execute on. A match (root object) will then cause all the
+            nested objects matching the path to be computed into the facet.
+            </summary>
+            <param name="nested"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.HistogramFacetBuilder">
+            <summary>
+            A facet builder of histogram facets.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramFacetBuilder.#ctor(System.String)">
+            <summary>
+            Constructs a new histogram facet with the provided facet logical name.
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramFacetBuilder.Field(System.String)">
+            <summary>
+            The field name to perform the histogram facet. Translates to perform the histogram facet
+            using the provided field as both the {@link #keyField(string)} and {@link #valueField(string)}.
+            </summary>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramFacetBuilder.KeyField(System.String)">
+            <summary>
+            The field name to use in order to control where the hit will "fall into" within the histogram
+            entries. Essentially, using the key field numeric value, the hit will be "rounded" into the relevant
+            bucket controlled by the interval.
+            </summary>
+            <param name="keyField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramFacetBuilder.ValueField(System.String)">
+            <summary>
+            The field name to use as the value of the hit to compute data based on values within the interval
+            (for example, total).
+            </summary>
+            <param name="valueField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramFacetBuilder.Interval(System.Int64)">
+            <summary>
+            The interval used to control the bucket "size" where each key value of a hit will fall into.
+            </summary>
+            <param name="interval"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramFacetBuilder.Interval(System.TimeSpan)">
+            <summary>
+            The interval used to control the bucket "size" where each key value of a hit will fall into.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramFacetBuilder.Bounds(System.Object,System.Object)">
+            <summary>
+            Sets the bounds from and to for the facet. Both performs bounds check and includes only
+            values within the bounds, and improves performance.
+            </summary>
+            <param name="from"></param>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramFacetBuilder.Global(System.Boolean)">
+            <summary>
+            Should the facet run in global mode (not bounded by the search query) or not (bounded by
+            the search query). Defaults to <tt>false</tt>.
+            </summary>
+            <param name="global"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramFacetBuilder.Scope(System.String)">
+            <summary>
+            Marks the facet to run in a specific scope.
+            </summary>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramFacetBuilder.FacetFilter(Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            An additional filter used to further filter down the set of documents the facet will run on.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramFacetBuilder.Nested(System.String)">
+            <summary>
+            Sets the nested path the facet will execute on. A match (root object) will then cause all the
+            nested objects matching the path to be computed into the facet.
+            </summary>
+            <param name="nested"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramScriptFacetBuilder.Lang(System.String)">
+            <summary>
+            The language of the script.
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramScriptFacetBuilder.Param(System.String,System.Object)">
+            <summary>
+             Parameters for {@link #valueScript(string)} to improve performance when executing the same script with different parameters.
+             </summary>
+             <param name="name"></param>
+             <param name="value"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramScriptFacetBuilder.Global(System.Boolean)">
+            <summary>
+            Should the facet run in global mode (not bounded by the search query) or not (bounded by
+            the search query). Defaults to <tt>false</tt>.
+            </summary>
+            <param name="global"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramScriptFacetBuilder.Scope(System.String)">
+            <summary>
+            Marks the facet to run in a specific scope.
+            </summary>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramScriptFacetBuilder.FacetFilter(Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            An additional filter used to further filter down the set of documents the facet will run on.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HistogramScriptFacetBuilder.Nested(System.String)">
+            <summary>
+            Sets the nested path the facet will execute on. A match (root object) will then cause all the
+            nested objects matching the path to be computed into the facet.
+            </summary>
+            <param name="nested"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFacetBuilder.Global(System.Boolean)">
+            <summary>
+            Should the facet run in global mode (not bounded by the search query) or not (bounded by
+            the search query). Defaults to <tt>false</tt>.
+            </summary>
+            <param name="global"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFacetBuilder.Scope(System.String)">
+            <summary>
+            Marks the facet to run in a specific scope.
+            </summary>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFacetBuilder.FacetFilter(Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            An additional filter used to further filter down the set of documents the facet will run on.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFacetBuilder.Nested(System.String)">
+            <summary>
+            Sets the nested path the facet will execute on. A match (root object) will then cause all the
+            nested objects matching the path to be computed into the facet.
+            </summary>
+            <param name="nested"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.RangeFacetBuilder">
+            <summary>
+            A facet builder of range facets.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFacetBuilder.#ctor(System.String)">
+            <summary>
+            Constructs a new range facet with the provided facet logical name.
+            </summary>
+            <param name="name">The logical name of the facet</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFacetBuilder.Field(System.String)">
+            <summary>
+            The field name to perform the range facet. Translates to perform the range facet
+            using the provided field as both the {@link #keyField(String)} and {@link #valueField(String)}.
+            </summary>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFacetBuilder.KeyField(System.String)">
+            <summary>
+            The field name to use in order to control where the hit will "fall into" within the range
+            entries. Essentially, using the key field numeric value, the hit will be "rounded" into the relevant
+            bucket controlled by the interval.
+            </summary>
+            <param name="keyField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFacetBuilder.ValueField(System.String)">
+            <summary>
+            The field name to use as the value of the hit to compute data based on values within the interval
+            (for example, total).
+            </summary>
+            <param name="valueField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFacetBuilder.AddRange(System.Double,System.Double)">
+            <summary>
+            Adds a range entry with explicit from and to.
+            </summary>
+            <param name="from">The from range limit</param>
+            <param name="to">The to range limit</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFacetBuilder.AddUnboundedTo(System.Double)">
+            <summary>
+            Adds a range entry with explicit from and unbounded to.
+            </summary>
+            <param name="from">the from range limit, to is unbounded.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFacetBuilder.AddUnboundedFrom(System.Double)">
+            <summary>
+            Adds a range entry with explicit to and unbounded from.
+            </summary>
+            <param name="to">The to range limit, from is unbounded.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFacetBuilder.Global(System.Boolean)">
+            <summary>
+            Should the facet run in global mode (not bounded by the search query) or not (bounded by
+            the search query). Defaults to <tt>false</tt>.
+            </summary>
+            <param name="global"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFacetBuilder.Scope(System.String)">
+            <summary>
+            Marks the facet to run in a specific scope.
+            </summary>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFacetBuilder.FacetFilter(Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            An additional filter used to further filter down the set of documents the facet will run on.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFacetBuilder.Nested(System.String)">
+            <summary>
+            Sets the nested path the facet will execute on. A match (root object) will then cause all the
+            nested objects matching the path to be computed into the facet.
+            </summary>
+            <param name="nested"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeScriptFacetBuilder.Lang(System.String)">
+            <summary>
+            The language of the script.
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeScriptFacetBuilder.Param(System.String,System.Object)">
+            <summary>
+             A parameter that will be passed to the script.
+             </summary>
+             <param name="name">The name of the script parameter.</param>
+             <param name="value">The value of the script parameter.</param>
+             <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeScriptFacetBuilder.AddRange(System.Double,System.Double)">
+            <summary>
+            Adds a range entry with explicit from and to.
+            </summary>
+            <param name="from">The from range limit</param>
+            <param name="to">The to range limit</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeScriptFacetBuilder.AddUnboundedTo(System.Double)">
+            <summary>
+            Adds a range entry with explicit from and unbounded to.
+            </summary>
+            <param name="from">The from range limit, to is unbounded.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeScriptFacetBuilder.AddUnboundedFrom(System.Double)">
+            <summary>
+            Adds a range entry with explicit to and unbounded from.
+            </summary>
+            <param name="to">The to range limit, from is unbounded.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeScriptFacetBuilder.Global(System.Boolean)">
+            <summary>
+            Should the facet run in global mode (not bounded by the search query) or not (bounded by
+            the search query). Defaults to <tt>false</tt>.
+            </summary>
+            <param name="global"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeScriptFacetBuilder.Scope(System.String)">
+            <summary>
+            Marks the facet to run in a specific scope.
+            </summary>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeScriptFacetBuilder.FacetFilter(Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            An additional filter used to further filter down the set of documents the facet will run on.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeScriptFacetBuilder.Nested(System.String)">
+            <summary>
+            Sets the nested path the facet will execute on. A match (root object) will then cause all the
+            nested objects matching the path to be computed into the facet.
+            </summary>
+            <param name="nested"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.StatisticalFacetBuilder.Fields(System.String[])">
+            <summary>
+            The fields the terms will be collected from.
+            </summary>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.StatisticalFacetBuilder.Global(System.Boolean)">
+            <summary>
+            Should the facet run in global mode (not bounded by the search query) or not (bounded by
+            the search query). Defaults to <tt>false</tt>.
+            </summary>
+            <param name="global"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.StatisticalFacetBuilder.Scope(System.String)">
+            <summary>
+            Marks the facet to run in a specific scope.
+            </summary>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.StatisticalFacetBuilder.FacetFilter(Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            An additional filter used to further filter down the set of documents the facet will run on.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.StatisticalFacetBuilder.Nested(System.String)">
+            <summary>
+            Sets the nested path the facet will execute on. A match (root object) will then cause all the
+            nested objects matching the path to be computed into the facet.
+            </summary>
+            <param name="nested"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.StatisticalScriptFacetBuilder.Lang(System.String)">
+            <summary>
+            The language of the script.
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.StatisticalScriptFacetBuilder.Param(System.String,System.Object)">
+            <summary>
+             Parameters for {@link #valueScript(string)} to improve performance when executing the same script with different parameters.
+             </summary>
+             <param name="name"></param>
+             <param name="value"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.StatisticalScriptFacetBuilder.Global(System.Boolean)">
+            <summary>
+            Should the facet run in global mode (not bounded by the search query) or not (bounded by
+            the search query). Defaults to <tt>false</tt>.
+            </summary>
+            <param name="global"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.StatisticalScriptFacetBuilder.Scope(System.String)">
+            <summary>
+            Marks the facet to run in a specific scope.
+            </summary>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.StatisticalScriptFacetBuilder.FacetFilter(Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            An additional filter used to further filter down the set of documents the facet will run on.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.StatisticalScriptFacetBuilder.Nested(System.String)">
+            <summary>
+            Sets the nested path the facet will execute on. A match (root object) will then cause all the
+            nested objects matching the path to be computed into the facet.
+            </summary>
+            <param name="nested"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsStatsFacetBuilder.#ctor(System.String)">
+            <summary>
+            Constructs a new terms stats facet builder under the provided facet name.
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsStatsFacetBuilder.Order(Nest.TermsStatsComparatorType)">
+            <summary>
+            The order by which to return the facets by. Defaults to COUNT.
+            </summary>
+            <param name="comparatorType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsStatsFacetBuilder.Size(System.Int32)">
+            <summary>
+            Sets the size of the result.
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsStatsFacetBuilder.AllTerms">
+            <summary>
+            Marks all terms to be returned, even ones with 0 counts.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsStatsFacetBuilder.ValueScript(System.String)">
+            <summary>
+            A value script to be executed (instead of value field) which results (numeric) will be used
+            to compute the totals.
+            </summary>
+            <param name="script"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsStatsFacetBuilder.Script(System.String)">
+            <summary>
+            The language of the script.
+            </summary>
+            <param name="script"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsStatsFacetBuilder.Param(System.String,System.Object)">
+            <summary>
+             A parameter that will be passed to the script.
+             </summary>
+             <param name="name">The name of the script parameter.</param>
+             <param name="value">The value of the script parameter.</param>
+             <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.MatchAllFilter">
+            <summary>
+            A filter that matches all documents.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.LimitFilter(System.Int32)">
+            <summary>
+            A filter that limits the results to the provided limit value (per shard!).
+            </summary>
+            <param name="limit">The limit</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.NestedFilter(System.String,Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.NestedFilter(System.String,Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.IdsFilter(System.String[])">
+            <summary>
+            Creates a new ids filter with the provided doc/mapping types.
+            </summary>
+            <param name="types">The types to match the ids against.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.TypeFilter(System.String)">
+            <summary>
+            A filter based on doc/mapping type.
+            </summary>
+            <param name="type">The field type</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.TermFilter(System.String,System.String)">
+            <summary>
+            A filter for a field based on a term.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="value">The term value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.TermFilter(System.String,System.Int32)">
+            <summary>
+            A filter for a field based on a term.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="value">The term value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.TermFilter(System.String,System.Int64)">
+            <summary>
+            A filter for a field based on a term.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="value">The term value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.TermFilter(System.String,System.Single)">
+            <summary>
+            A filter for a field based on a term.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="value">The term value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.TermFilter(System.String,System.Double)">
+            <summary>
+            A filter for a field based on a term.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="value">The term value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.TermFilter(System.String,System.Object)">
+            <summary>
+            A filter for a field based on a term.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="value">The term value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.TermsFilter(System.String,System.String[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.TermsFilter(System.String,System.Int32[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.TermsFilter(System.String,System.Int64[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.TermsFilter(System.String,System.Single[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.TermsFilter(System.String,System.Double[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.TermsFilter(System.String,System.Object[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.InFilter(System.String,System.String[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.InFilter(System.String,System.Int32[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.InFilter(System.String,System.Int64[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.InFilter(System.String,System.Single[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.InFilter(System.String,System.Double[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.InFilter(System.String,System.Object[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.PrefixFilter(System.String,System.String)">
+            <summary>
+            A filter that restricts search results to values that have a matching prefix in a given field.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="prefix">The prefix</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.RangeFilter(System.String)">
+            <summary>
+            A filter that restricts search results to values that are within the given range.
+            </summary>
+            <param name="name">The field name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.NumericRangeFilter(System.String)">
+            <summary>
+            A filter that restricts search results to values that are within the given numeric range. Uses the field data cache (loading all the values for the specified field into memory)
+            </summary>
+            <param name="name">The field name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.QueryFilter(Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            A filter that simply wraps a query.
+            </summary>
+            <param name="queryBuilder">The query to wrap as a filter</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.ScriptFilter(System.String)">
+            <summary>
+            A builder for filter based on a script.
+            </summary>
+            <param name="script">The script to filter by</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.GeoDistanceFilter(System.String)">
+            <summary>
+            A filter to filter based on a specific distance from a specific geo location / point.
+            </summary>
+            <param name="name">The location field name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.GeoDistanceRangeFilter(System.String)">
+            <summary>
+            A filter to filter based on a specific range from a specific geo location / point.
+            </summary>
+            <param name="name">The location field name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.GeoBoundingBoxFilter(System.String)">
+            <summary>
+            A filter to filter based on a bounding box defined by top left and bottom right locations / points
+            </summary>
+            <param name="name">The location field name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.GeoPolygonFilter(System.String)">
+            <summary>
+            A filter to filter based on a polygon defined by a set of locations  / points.
+            </summary>
+            <param name="name">The location field name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.ExistsFilter(System.String)">
+            <summary>
+            A filter to filter only documents where a field exists in them.
+            </summary>
+            <param name="name">The name of the field</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.MissingFilter(System.String)">
+            <summary>
+            A filter to filter only documents where a field does not exists in them.
+            </summary>
+            <param name="name">The name of the field</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.HasChildFilter(System.String,Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            Constructs a child filter, with the child type and the query to run against child documents, with
+            the result of the filter being the *parent* documents.
+            </summary>
+            <param name="type">The child type</param>
+            <param name="query">The query to run against the child type</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.BoolFilter">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.AndFilter(Nest.Dsl.Factory.IFilterBuilder[])">
+            <summary>
+            
+            </summary>
+            <param name="filters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.OrFilter(Nest.Dsl.Factory.IFilterBuilder[])">
+            <summary>
+            
+            </summary>
+            <param name="filters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilterFactory.NotFilter(Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceRangeFilterBuilder.FilterName(System.String)">
+            <summary>
+            Sets the filter name for the filter that can be used when searching for matched_filters per hit.
+            </summary>
+            <param name="filterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceRangeFilterBuilder.Cache(System.Boolean)">
+            <summary>
+            Should the filter be cached or not. Defaults to false.
+            </summary>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoPolygonFilterBuilder.AddPoint(System.Double,System.Double)">
+            <summary>
+            Adds a point with lat and lon
+            </summary>
+            <param name="lat">The latitude</param>
+            <param name="lon">The longitude</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoPolygonFilterBuilder.FilterName(System.String)">
+            <summary>
+            Sets the filter name for the filter that can be used when searching for matched_filters per hit.
+            </summary>
+            <param name="filterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoPolygonFilterBuilder.Cache(System.Boolean)">
+            <summary>
+            Should the filter be cached or not. Defaults to false.
+            </summary>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HasChildFilterBuilder.FilterName(System.String)">
+            <summary>
+            Sets the filter name for the filter that can be used when searching for matched_filters per hit.
+            </summary>
+            <param name="filterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.IdsFilterBuilder.#ctor(System.String[])">
+            <summary>
+            Create an ids filter based on the type.
+            </summary>
+            <param name="types"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.IdsFilterBuilder.AddIds(System.String[])">
+            <summary>
+            Adds ids to the filter.
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.IdsFilterBuilder.Ids(System.String[])">
+            <summary>
+            Adds ids to the filter.
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.IdsFilterBuilder.FilterName(System.String)">
+            <summary>
+            Sets the filter name for the filter that can be used when searching for matched_filters per hit.
+            </summary>
+            <param name="filterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MissingFilterBuilder.FilterName(System.String)">
+            <summary>
+            Sets the filter name for the filter that can be used when searching for matched_filters per hit.
+            </summary>
+            <param name="filterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.#ctor(System.String)">
+            <summary>
+            A filter that restricts search results to values that are within the given range
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.From(System.Object)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.From(System.Int32)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.From(System.Int64)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.From(System.Single)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.From(System.Double)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Gt(System.Object)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Gt(System.Int32)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Gt(System.Int64)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Gt(System.Single)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Gt(System.Double)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Gte(System.Object)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Gte(System.Int32)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Gte(System.Int64)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Gte(System.Single)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Gte(System.Double)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.To(System.Object)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.To(System.Int32)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.To(System.Single)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.To(System.Int64)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.To(System.Double)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Lt(System.Object)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Lt(System.Int32)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Lt(System.Int64)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Lt(System.Single)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Lt(System.Double)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Lte(System.Object)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Lte(System.Int32)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Lte(System.Single)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Lte(System.Int64)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.Lte(System.Double)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.IncludeLower(System.Boolean)">
+            <summary>
+            Should the lower bound be included or not. Defaults to true.
+            </summary>
+            <param name="includeLower"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NumericRangeFilterBuilder.IncludeUpper(System.Boolean)">
+            <summary>
+            Should the upper bound be included or not. Defaults to true.
+            </summary>
+            <param name="includeUpper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.OrFilterBuilder.Add(Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            Adds a filter to the list of filters to "or".
+            </summary>
+            <param name="filterBuilder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.OrFilterBuilder.Cache(System.Boolean)">
+            <summary>
+            Should the filter be cached or not. Defaults to false.
+            </summary>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.#ctor(System.String)">
+            <summary>
+            A filter that restricts search results to values that are within the given range.
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.From(System.Object)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.From(System.Int32)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.From(System.Int64)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.From(System.Single)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.From(System.Double)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Gt(System.Object)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Gt(System.Int32)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Gt(System.Int64)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Gt(System.Single)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Gt(System.Double)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Gte(System.Object)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Gte(System.Int32)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Gte(System.Int64)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Gte(System.Single)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Gte(System.Double)">
+            <summary>
+            The from part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.To(System.Object)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.To(System.Int32)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.To(System.Single)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.To(System.Int64)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.To(System.Double)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Lt(System.Object)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Lt(System.Int32)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Lt(System.Int64)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Lt(System.Single)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Lt(System.Double)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Lte(System.Object)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Lte(System.Int32)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Lte(System.Single)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Lte(System.Int64)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Lte(System.Double)">
+            <summary>
+            The to part of the filter query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.IncludeLower(System.Boolean)">
+            <summary>
+            Should the lower bound be included or not. Defaults to true.
+            </summary>
+            <param name="includeLower"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.IncludeUpper(System.Boolean)">
+            <summary>
+            Should the upper bound be included or not. Defaults to true.
+            </summary>
+            <param name="includeUpper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.FilterName(System.String)">
+            <summary>
+            Sets the filter name for the filter that can be used when searching for matched_filters per hit.
+            </summary>
+            <param name="filterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeFilterBuilder.Cache(System.Boolean)">
+            <summary>
+            Should the filter be cached or not. Defaults to true.
+            </summary>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.ScriptFilterBuilder.Lang(System.String)">
+            <summary>
+            Sets the script language.
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsFilterBuilder.#ctor(System.String,System.String[])">
+            <summary>
+            A filter for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsFilterBuilder.#ctor(System.String,System.Int32[])">
+            <summary>
+            A filter for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsFilterBuilder.#ctor(System.String,System.Int64[])">
+            <summary>
+            A filter for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsFilterBuilder.#ctor(System.String,System.Double[])">
+            <summary>
+            A filter for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsFilterBuilder.#ctor(System.String,System.Single[])">
+            <summary>
+            A filter for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsFilterBuilder.#ctor(System.String,System.Object[])">
+            <summary>
+            A filter for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsFilterBuilder.Execution(System.String)">
+            <summary>
+            Sets the execution mode for the terms filter. Can be either "plain", "bool"
+            "and". Defaults to "plain".
+            </summary>
+            <param name="execution"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsFilterBuilder.Cache(System.Boolean)">
+            <summary>
+            Should the filter be cached or not. Defaults to <tt>false</tt>.
+            </summary>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HighlightBuilder.Field(System.String)">
+            <summary>
+            Adds a field to be highlighted with default fragment size of 100 characters, and
+            default number of fragments of 5 using the default encoder
+            </summary>
+            <param name="name">The field to highlight</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HighlightBuilder.Field(System.String,System.Int32)">
+            <summary>
+            Adds a field to be highlighted with a provided fragment size (in characters), and
+            default number of fragments of 5.
+            </summary>
+            <param name="name">The field to highlight</param>
+            <param name="fragmentSize">The size of a fragment in characters</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HighlightBuilder.Field(System.String,System.Int32,System.Int32)">
+            <summary>
+            Adds a field to be highlighted with a provided fragment size (in characters), and
+            a provided (maximum) number of fragments.
+            </summary>
+            <param name="name">The field to highlight</param>
+            <param name="fragmentSize">The size of a fragment in characters</param>
+            <param name="numberOfFragments">The (maximum) number of fragments</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HighlightBuilder.Field(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adds a field to be highlighted with a provided fragment size (in characters), and
+            a provided (maximum) number of fragments.
+            </summary>
+            <param name="name">The field to highlight</param>
+            <param name="fragmentSize">The size of a fragment in characters</param>
+            <param name="numberOfFragments">The (maximum) number of fragments</param>
+            <param name="fragmentOffset">The offset from the start of the fragment to the start of the highlight</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HighlightBuilder.TagsSchema(System.String)">
+            <summary>
+            Set a tag scheme that encapsulates a built in pre and post tags. The allows schemes
+            are <tt>styled</tt> and <tt>default</tt>.
+            </summary>
+            <param name="schemaName">The tag scheme name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HighlightBuilder.Encoder(System.String)">
+            <summary>
+            Set encoder for the highlighting
+            are <tt>styled</tt> and <tt>default</tt>.
+            </summary>
+            <param name="encoder">Encoder name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HighlightBuilder.PreTags(System.String[])">
+            <summary>
+            Explicitly set the pre tags that will be used for highlighting.
+            </summary>
+            <param name="preTags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HighlightBuilder.PostTags(System.String[])">
+            <summary>
+            Explicitly set the post tags that will be used for highlighting.
+            </summary>
+            <param name="postTags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HighlightBuilder.Order(System.String)">
+            <summary>
+            The order of fragments per field. By default, ordered by the order in the
+            highlighted text. Can be <tt>score</tt>, which then it will be ordered
+            by score of the fragments.
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.MatchAllQuery">
+            <summary>
+            A query that match on all documents.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TextQuery(System.String,System.Object)">
+            <summary>
+             Creates a text query with type "BOOLEAN" for the provided field name and text.
+            </summary>
+            <param name="name">The field name.</param>
+            <param name="text">The query text (to be analyzed).</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TextPhraseQuery(System.String,System.Object)">
+            <summary>
+            Creates a text query with type "PHRASE" for the provided field name and text.
+            </summary>
+            <param name="name">The field name.</param>
+            <param name="text">The query text (to be analyzed).</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TextPhrasePrefixQuery(System.String,System.Object)">
+            <summary>
+            Creates a text query with type "PHRASE_PREFIX" for the provided field name and text.
+            </summary>
+            <param name="name">The field name.</param>
+            <param name="text">The query text (to be analyzed).</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.DisMaxQuery">
+            <summary>
+            A query that generates the union of documents produced by its sub-queries, and that scores each document
+            with the maximum score for that document as produced by any sub-query, plus a tie breaking increment for any
+            additional matching sub-queries.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.IdsQuery(System.String[])">
+            <summary>
+            Constructs a query that will match only specific ids within types.
+            </summary>
+            <param name="types">The mapping/doc type</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TermQuery(System.String,System.String)">
+            <summary>
+            A Query that matches documents containing a term.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="value">The value of the term</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TermQuery(System.String,System.Int32)">
+            <summary>
+            A Query that matches documents containing a term.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="value">The value of the term</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TermQuery(System.String,System.Int64)">
+            <summary>
+            A Query that matches documents containing a term.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="value">The value of the term</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TermQuery(System.String,System.Single)">
+            <summary>
+            A Query that matches documents containing a term.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="value">The value of the term</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TermQuery(System.String,System.Double)">
+            <summary>
+            A Query that matches documents containing a term.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="value">The value of the term</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TermQuery(System.String,System.Boolean)">
+            <summary>
+            A Query that matches documents containing a term.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="value">The value of the term</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TermQuery(System.String,System.Object)">
+            <summary>
+            A Query that matches documents containing a term.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="value">The value of the term</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.FuzzyQuery(System.String,System.String)">
+            <summary>
+            A Query that matches documents using fuzzy query.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="value">The value of the term</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.FieldQuery(System.String,System.String)">
+            <summary>
+            A query that executes the query string against a field. It is a simplified
+            version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="query">The query string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.FieldQuery(System.String,System.Int32)">
+            <summary>
+            A query that executes the query string against a field. It is a simplified
+            version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="query">The query string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.FieldQuery(System.String,System.Int64)">
+            <summary>
+            A query that executes the query string against a field. It is a simplified
+            version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="query">The query string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.FieldQuery(System.String,System.Single)">
+            <summary>
+            A query that executes the query string against a field. It is a simplified
+            version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="query">The query string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.FieldQuery(System.String,System.Double)">
+            <summary>
+            A query that executes the query string against a field. It is a simplified
+            version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="query">The query string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.FieldQuery(System.String,System.Boolean)">
+            <summary>
+            A query that executes the query string against a field. It is a simplified
+            version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="query">The query string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.FieldQuery(System.String,System.Object)">
+            <summary>
+            A query that executes the query string against a field. It is a simplified
+            version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="query">The query string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.PrefixQuery(System.String,System.String)">
+            <summary>
+            A Query that matches documents containing terms with a specified prefix.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="prefix">The prefix query</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.RangeQuery(System.String)">
+            <summary>
+            A Query that matches documents within an range of terms.
+            </summary>
+            <param name="name">The field name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.WildcardQuery(System.String,System.String)">
+            <summary>
+            Implements the wildcard search query. Supported wildcards are <tt>*</tt>, which
+            matches any character sequence (including the empty one), and <tt>?</tt>,
+            which matches any single character. Note this query can be slow, as it
+            needs to iterate over many terms. In order to prevent extremely slow WildcardQueries,
+            a Wildcard term should not start with one of the wildcards <tt>*</tt> or
+            <tt>?</tt>.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="query">The wildcard query string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.QueryString(System.String)">
+            <summary>
+            A query that parses a query string and runs it. There are two modes that this operates. The first,
+            when no field is added (using {@link QueryStringQueryBuilder#field(String)}, will run the query once and non prefixed fields
+            will use the {@link QueryStringQueryBuilder#defaultField(String)} set. The second, when one or more fields are added
+            (using {@link QueryStringQueryBuilder#field(String)}), will run the parsed query against the provided fields, and combine
+            them either using DisMax or a plain boolean query (see {@link QueryStringQueryBuilder#useDisMax(boolean)}).
+            </summary>
+            <param name="queryString">The query string to run</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.BoostingQuery">
+            <summary>
+            The BoostingQuery class can be used to effectively demote results that match a given query.
+            Unlike the "NOT" clause, this still selects documents that contain undesirable terms,
+            but reduces their overall score:
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.BoolQuery">
+            <summary>
+            A Query that matches documents matching boolean combinations of other queries.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.FilteredQuery(Nest.Dsl.Factory.IQueryBuilder,Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            A query that applies a filter to the results of another query.
+            </summary>
+            <param name="queryBuilder">The query to apply the filter to</param>
+            <param name="filterBuilder">The filter to apply on the query</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.ConstantScoreQuery(Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            A query that wraps a filter and simply returns a constant score equal to the
+            query boost for every document in the filter.
+            </summary>
+            <param name="filterBuilder">The filter to wrap in a constant score query</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.CustomBoostFactorQuery(Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            A query that simply applies the boost fact to the wrapped query (multiplies it).
+            </summary>
+            <param name="queryBuilder">The query to apply the boost factor to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.CustomScoreQuery(Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            A query that allows to define a custom scoring script.
+            </summary>
+            <param name="queryBuilder">The query to custom score</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.MoreLikeThisQuery(System.String[])">
+            <summary>
+            A more like this query that finds documents that are "like" the provided {@link MoreLikeThisQueryBuilder#likeText(String)}
+            which is checked against the fields the query is constructed with.
+            </summary>
+            <param name="fields">The fields to run the query against</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.MoreLikeThisQuery">
+            <summary>
+            A more like this query that finds documents that are "like" the provided {@link MoreLikeThisQueryBuilder#likeText(String)}
+            which is checked against the "_all" field.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.FuzzyLikeThisQuery(System.String[])">
+            <summary>
+            A fuzzy like this query that finds documents that are "like" the provided {@link FuzzyLikeThisQueryBuilder#likeText(String)}
+            which is checked against the fields the query is constructed with.
+            </summary>
+            <param name="fields">The fields to run the query against</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.FuzzyLikeThisQuery">
+            <summary>
+            A fuzzy like this query that finds documents that are "like" the provided {@link FuzzyLikeThisQueryBuilder#likeText(String)}
+            which is checked against the "_all" field.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.FuzzyLikeThisFieldQuery(System.String)">
+            <summary>
+            A fuzzy like this query that finds documents that are "like" the provided {@link FuzzyLikeThisFieldQueryBuilder#likeText(String)}.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.IndicesQuery(Nest.Dsl.Factory.IQueryBuilder,System.String[])">
+            <summary>
+            A query that will execute the wrapped query only for the specified indices, and "match_all" when
+            it does not match those indices.
+            </summary>
+            <param name="queryBuilder"></param>
+            <param name="indices"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.MoreLikeThisFieldQuery(System.String)">
+            <summary>
+            A more like this query that runs against a specific field.
+            </summary>
+            <param name="name">The field name</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TopChildrenQuery(System.String,Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            Constructs a new scoring child query, with the child type and the query to run on the child documents. The
+            results of this query are the parent docs that those child docs matched.
+            </summary>
+            <param name="type">The child type</param>
+            <param name="query">The query</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.HasChildQuery(System.String,Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            Constructs a new NON scoring child query, with the child type and the query to run on the child documents. The
+            results of this query are the parent docs that those child docs matched.
+            </summary>
+            <param name="type">The child type.</param>
+            <param name="query">The query.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TermsQuery(System.String,System.String[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TermsQuery(System.String,System.Int32[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TermsQuery(System.String,System.Int64[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TermsQuery(System.String,System.Single[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TermsQuery(System.String,System.Double[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.TermsQuery(System.String,System.Object[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.InQuery(System.String,System.String[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.InQuery(System.String,System.Int32[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.InQuery(System.String,System.Int64[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.InQuery(System.String,System.Single[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.InQuery(System.String,System.Double[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.InQuery(System.String,System.Object[])">
+            <summary>
+            A filer for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.InQuery(System.String,System.String)">
+            <summary>
+            A filter that restricts search results to values that have a matching prefix in a given
+            field.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="prefix">The prefix</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.WrapperQuery(System.String)">
+            <summary>
+            A Query builder which allows building a query thanks to a JSON string or binary data.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryFactory.WrapperQuery(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            A Query builder which allows building a query thanks to a JSON string or binary data.
+            </summary>
+            <param name="source"></param>
+            <param name="offset"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.BoolQueryBuilder">
+            <summary>
+            A Query that matches documents matching boolean combinations of other queries.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.BoolQueryBuilder.Must(Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            Adds a query that <b>must</b> appear in the matching documents.
+            </summary>
+            <param name="queryBuilder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.BoolQueryBuilder.MustNot(Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            Adds a query that <b>must not</b> appear in the matching documents.
+            </summary>
+            <param name="queryBuilder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.BoolQueryBuilder.Should(Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            Adds a query that <i>should</i> appear in the matching documents. For a boolean query with no
+            <tt>MUST</tt> clauses one or more <code>SHOULD</code> clauses must match a document
+            for the BooleanQuery to match.
+            </summary>
+            <param name="queryBuilder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.BoolQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.BoolQueryBuilder.DisableCoord(System.Boolean)">
+            <summary>
+            Disables <tt>Similarity#coord(int,int)</tt> in scoring. Defaults to <tt>false</tt>.
+            </summary>
+            <param name="disableCoord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.BoolQueryBuilder.MinimumNumberShouldMatch(System.Int32)">
+             <summary>
+             Specifies a minimum number of the optional (should) boolean clauses which must be satisfied.
+             By default no optional clauses are necessary for a match
+             (unless there are no required clauses). If this method is used,
+             then the specified number of clauses is required.
+            
+             Use of this method is totally independent of specifying that
+             any specific clauses are required (or prohibited).  This number will
+             only be compared against the number of matching optional clauses.
+            
+             minimumNumberShouldMatch the number of optional clauses that must match
+             </summary>
+             <param name="minimumNumberShouldMatch"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.BoolQueryBuilder.HasClauses">
+            <summary>
+            Return <code>true</code> if the query being built has no clause yet.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.BoostingQueryBuilder">
+             <summary>
+             The BoostingQuery class can be used to effectively demote results that match a given query.
+             Unlike the "NOT" clause, this still selects documents that contain undesirable terms,
+             but reduces their overall score:
+            
+             Query balancedQuery = new BoostingQuery(positiveQuery, negativeQuery, 0.01f);
+             In this scenario the positiveQuery contains the mandatory, desirable criteria which is used to
+             select all matching documents, and the negativeQuery contains the undesirable elements which
+             are simply used to lessen the scores. Documents that match the negativeQuery have their score
+             multiplied by the supplied "boost" parameter, so this should be less than 1 to achieve a
+             demoting effect
+             </summary>
+        </member>
+        <member name="T:Nest.Dsl.Factory.ConstantScoreQueryBuilder">
+            <summary>
+            A query that wraps a filter and simply returns a constant score equal to the
+            query boost for every document in the filter.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.ConstantScoreQueryBuilder.#ctor(Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            A query that wraps a filter and simply returns a constant score equal to the
+            query boost for every document in the filter.
+            </summary>
+            <param name="filterBuilder">The filter to wrap in a constant score query</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.ConstantScoreQueryBuilder.#ctor(Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            A query that wraps a query and simply returns a constant score equal to the
+            query boost for every document in the query.
+            </summary>
+            <param name="filterBuilder">The filter to wrap in a constant score query</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.ConstantScoreQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.CustomBoostFactorQueryBuilder">
+            <summary>
+            A query that simply applies the boost factor to another query (multiply it).
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.CustomBoostFactorQueryBuilder.#ctor(Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            A query that simply applies the boost factor to another query (multiply it).
+            </summary>
+            <param name="queryBuilder">The query to apply the boost factor to.</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.CustomBoostFactorQueryBuilder.BoostFactor(System.Single)">
+            <summary>
+            Sets the boost factor for this query.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.CustomFiltersScoreQueryBuilder">
+            <summary>
+            A query that uses a filters with a script associated with them to compute the score.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.CustomFiltersScoreQueryBuilder.Lang(System.String)">
+            <summary>
+            Sets the language of the script.
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.CustomFiltersScoreQueryBuilder.Params(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Additional parameters that can be provided to the script.
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.CustomFiltersScoreQueryBuilder.Param(System.String,System.Object)">
+            <summary>
+            Additional parameters that can be provided to the script.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.CustomFiltersScoreQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.CustomScoreQueryBuilder">
+            <summary>
+            A query that uses a script to compute the score.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.CustomScoreQueryBuilder.#ctor(Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            A query that simply applies the boost factor to another query (multiply it).
+            </summary>
+            <param name="queryBuilder">The query to apply the boost factor to.</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.CustomScoreQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.CustomScoreQueryBuilder.Lang(System.String)">
+            <summary>
+            Sets the language of the script.
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.CustomScoreQueryBuilder.Params(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Additional parameters that can be provided to the script.
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.CustomScoreQueryBuilder.Param(System.String,System.Object)">
+            <summary>
+            Additional parameters that can be provided to the script.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.DisMaxQueryBuilder">
+            <summary>
+            A query that generates the union of documents produced by its sub-queries, and that scores each document
+            with the maximum score for that document as produced by any sub-query, plus a tie breaking increment for any
+            additional matching sub-queries.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.DisMaxQueryBuilder.Add(Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            Add a sub-query to this disjunction.
+            </summary>
+            <param name="queryBuilder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.DisMaxQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.DisMaxQueryBuilder.TieBreaker(System.Single)">
+            <summary>
+            The score of each non-maximum disjunct for a document is multiplied by this weight
+            and added into the final score.  If non-zero, the value should be small, on the order of 0.1, which says that
+            10 occurrences of word in a lower-scored field that is also in a higher scored field is just as good as a unique
+            word in the lower scored field (i.e., one that is not in any higher scored field.
+            </summary>
+            <param name="tieBreaker"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.FieldQueryBuilder">
+            <summary>
+            A query that executes the query string against a field. It is a simplified
+            version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.#ctor(System.String,System.String)">
+             <summary>
+             A query that executes the query string against a field. It is a simplified
+             version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+             </summary>
+             <param name="name">The name of the field</param>
+             <param name="query">The query string</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.#ctor(System.String,System.Int32)">
+             <summary>
+             A query that executes the query string against a field. It is a simplified
+             version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+             </summary>
+             <param name="name">The name of the field</param>
+             <param name="query">The query string</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.#ctor(System.String,System.Int64)">
+             <summary>
+             A query that executes the query string against a field. It is a simplified
+             version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+             </summary>
+             <param name="name">The name of the field</param>
+             <param name="query">The query string</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.#ctor(System.String,System.Single)">
+             <summary>
+             A query that executes the query string against a field. It is a simplified
+             version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+             </summary>
+             <param name="name">The name of the field</param>
+             <param name="query">The query string</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.#ctor(System.String,System.Double)">
+             <summary>
+             A query that executes the query string against a field. It is a simplified
+             version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+             </summary>
+             <param name="name">The name of the field</param>
+             <param name="query">The query string</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.#ctor(System.String,System.Boolean)">
+             <summary>
+             A query that executes the query string against a field. It is a simplified
+             version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+             </summary>
+             <param name="name">The name of the field</param>
+             <param name="query">The query string</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.#ctor(System.String,System.Object)">
+             <summary>
+             A query that executes the query string against a field. It is a simplified
+             version of {@link QueryStringQueryBuilder} that simply runs against
+            a single field.
+             </summary>
+             <param name="name">The name of the field</param>
+             <param name="query">The query string</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.DefaultOperator(Nest.Operator)">
+             <summary>
+             Sets the boolean operator of the query parser used to parse the query string.
+            
+             <p>In default mode ({@link FieldQueryBuilder.Operator#OR}) terms without any modifiers
+             are considered optional: for example <code>capital of Hungary</code> is equal to
+             <code>capital OR of OR Hungary</code>.</p>
+            
+             <p>In {@link FieldQueryBuilder.Operator#AND} mode terms are considered to be in conjunction: the
+             above mentioned query is parsed as <code>capital AND of AND Hungary</code></p>
+             </summary>
+             <param name="defaultOperator"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.Analyzer(System.String)">
+            <summary>
+            The optional analyzer used to analyze the query string. Note, if a field has search analyzer
+            defined for it, then it will be used automatically. Defaults to the smart search analyzer.
+            </summary>
+            <param name="analyzer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.AutoGeneratePhraseQueries(System.Boolean)">
+            <summary>
+            Set to true if phrase queries will be automatically generated
+            when the analyzer returns more than one term from whitespace
+            delimited text.
+            NOTE: this behavior may not be suitable for all languages.
+            Set to false if phrase queries should only be generated when
+            surrounded by double quotes.
+            </summary>
+            <param name="autoGeneratePhraseQueries"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.AllowLeadingWildcard(System.Boolean)">
+            <summary>
+            Should leading wildcards be allowed or not. Defaults to <tt>true</tt>.
+            </summary>
+            <param name="allowLeadingWildcard"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.LowercaseExpandedTerms(System.Boolean)">
+            <summary>
+            Whether terms of wildcard, prefix, fuzzy and range queries are to be automatically
+            lower-cased or not.  Default is <tt>true</tt>.
+            </summary>
+            <param name="lowercaseExpandedTerms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.EnablePositionIncrements(System.Boolean)">
+             Set to <tt>true</tt> to enable position increments in result query. Defaults to
+             <tt>true</tt>.
+            
+             <p>When set, result phrase and multi-phrase queries will be aware of position increments.
+             Useful when e.g. a StopFilter increases the position increment of the token that follows an omitted token.</p>
+             <param name="enablePositionIncrements"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.FuzzyMinSim(System.Single)">
+            <summary>
+            Set the minimum similarity for fuzzy queries. Default is 0.5f.
+            </summary>
+            <param name="fuzzyMinSim"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.FuzzyPrefixLength(System.Int32)">
+            <summary>
+            Set the prefix length for fuzzy queries. Default is 0.
+            </summary>
+            <param name="fuzzyPrefixLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.PhraseSlop(System.Int32)">
+            <summary>
+            Sets the default slop for phrases.  If zero, then exact phrase matches
+            are required. Default value is zero.
+            </summary>
+            <param name="phraseSlop"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldQueryBuilder.AnalyzeWildcard(System.Boolean)">
+            <summary>
+            Set to <tt>true</tt> to enable analysis on wildcard and prefix queries.
+            </summary>
+            <param name="analyzeWildcard"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilteredQueryBuilder.#ctor(Nest.Dsl.Factory.IQueryBuilder,Nest.Dsl.Factory.IFilterBuilder)">
+            <summary>
+            A query that applies a filter to the results of another query.
+            </summary>
+            <param name="queryBuilder">The query to apply the filter to</param>
+            <param name="filterBuilder">The filter to apply on the query</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FilteredQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FuzzyLikeThisFieldQueryBuilder.#ctor(System.String)">
+            <summary>
+            A fuzzy more like this query on the provided field.
+            </summary>
+            <param name="name">The name of the field</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FuzzyLikeThisFieldQueryBuilder.LikeText(System.String)">
+            <summary>
+            The text to use in order to find documents that are "like" this.
+            </summary>
+            <param name="likeText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FuzzyLikeThisFieldQueryBuilder.Analyzer(System.String)">
+            <summary>
+            The analyzer that will be used to analyze the text. Defaults to the analyzer associated with the field.
+            </summary>
+            <param name="analyzer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FuzzyLikeThisQueryBuilder.#ctor">
+            <summary>
+            Constructs a new fuzzy like this query which uses the "_all" field.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FuzzyLikeThisQueryBuilder.#ctor(System.String[])">
+            <summary>
+            Sets the field names that will be used when generating the 'Fuzzy Like This' query.
+            </summary>
+            <param name="fields">The field names that will be used when generating the 'Fuzzy Like This' query.</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FuzzyLikeThisQueryBuilder.LikeText(System.String)">
+            <summary>
+            The text to use in order to find documents that are "like" this.
+            </summary>
+            <param name="likeText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FuzzyLikeThisQueryBuilder.Analyzer(System.String)">
+            <summary>
+            The analyzer that will be used to analyze the text. Defaults to the analyzer associated with the fied.
+            </summary>
+            <param name="analyzer"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.FuzzyQueryBuilder">
+            <summary>
+            A Query that does fuzzy matching for a specific value.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FuzzyQueryBuilder.#ctor(System.String,System.Object)">
+            <summary>
+            Constructs a new term query.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="value">The value of the term</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FuzzyQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HasChildQueryBuilder.Scope(System.String)">
+            <summary>
+            The scope of the query, which can later be used, for example, to run facets against the child docs that
+            matches the query.
+            </summary>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.HasChildQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.IdsQueryBuilder">
+            <summary>
+            A query that will return only documents matching specific ids (and a type).
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.IdsQueryBuilder.AddIds(System.String[])">
+            <summary>
+            Adds ids to the filter.
+            </summary>
+            <param name="?"></param>
+            <param name="ids"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.IdsQueryBuilder.Ids(System.String[])">
+            <summary>
+            Adds ids to the filter.
+            </summary>
+            <param name="?"></param>
+            <param name="ids"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.IdsQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.IndicesQueryBuilder">
+            <summary>
+            A query that will execute the wrapped query only for the specified indices, and "match_all" when
+            it does not match those indices (by default).
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.IndicesQueryBuilder.NoMatchQuery(System.String)">
+            <summary>
+            Sets the no match query, can either be <tt>all</tt> or <tt>none</tt>.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.IndicesQueryBuilder.NoMatchQuery(Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            Sets the query to use when it executes on an index that does not match the indices provided.
+            </summary>
+            <param name="noMatchQuery"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.MoreLikeThisFieldQueryBuilder">
+            <summary>
+            A more like this query that runs against a specific field.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisFieldQueryBuilder.#ctor(System.String)">
+            <summary>
+            A more like this query that runs against a specific field.
+            </summary>
+            <param name="name">The field name to run the query against</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisFieldQueryBuilder.LikeText(System.String)">
+            <summary>
+            The text to use in order to find documents that are "like" this.
+            </summary>
+            <param name="likeText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisFieldQueryBuilder.PercentTermsToMatch(System.Single)">
+            <summary>
+            The percentage of terms to match. Defaults to <tt>0.3</tt>.
+            </summary>
+            <param name="percentTermsToMatch"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisFieldQueryBuilder.MinTermFreq(System.Int32)">
+            <summary>
+            The frequency below which terms will be ignored in the source doc. The default
+            frequency is <tt>2</tt>.
+            </summary>
+            <param name="minTermFreqy"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisFieldQueryBuilder.MaxQueryTerms(System.Int32)">
+            <summary>
+            Sets the maximum number of query terms that will be included in any generated query.
+            Defaults to <tt>25</tt>.
+            </summary>
+            <param name="maxQueryTerms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisFieldQueryBuilder.StopWords(System.String[])">
+             <summary>
+             Set the set of stopwords.
+            
+             <p>Any word in this set is considered "uninteresting" and ignored. Even if your Analyzer allows stopwords, you
+             might want to tell the MoreLikeThis code to ignore them, as for the purposes of document similarity it seems
+             reasonable to assume that "a stop word is never interesting".</p>
+             </summary>
+             <param name="stopWords"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisFieldQueryBuilder.MinDocFreq(System.Int32)">
+            <summary>
+            Sets the frequency at which words will be ignored which do not occur in at least this
+            many docs. Defaults to <tt>5</tt>.
+            </summary>
+            <param name="minDocFreq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisFieldQueryBuilder.MaxDocFreq(System.Int32)">
+            <summary>
+            Set the maximum frequency in which words may still appear. Words that appear
+            in more than this many docs will be ignored. Defaults to unbounded.
+            </summary>
+            <param name="maxDocFreq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisFieldQueryBuilder.MinWordLen(System.Int32)">
+            <summary>
+            Sets the minimum word length below which words will be ignored. Defaults
+            to <tt>0</tt>.
+            </summary>
+            <param name="minWordLen"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisFieldQueryBuilder.MaxWordLen(System.Int32)">
+            <summary>
+            Sets the maximum word length above which words will be ignored. Defaults to
+            unbounded (<tt>0</tt>).
+            </summary>
+            <param name="maxWordLen"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisFieldQueryBuilder.BoostTerms(System.Single)">
+            <summary>
+            Sets the boost factor to use when boosting terms. Defaults to <tt>1</tt>.
+            </summary>
+            <param name="boostTerms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisFieldQueryBuilder.Analyzer(System.String)">
+            <summary>
+            The analyzer that will be used to analyze the text. Defaults to the analyzer associated with the fied.
+            </summary>
+            <param name="analyzer"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.MoreLikeThisQueryBuilder">
+            <summary>
+            A more like this query that finds documents that are "like" the provided {@link #likeText(String)}
+            which is checked against the fields the query is constructed with.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisQueryBuilder.#ctor">
+            <summary>
+            Constructs a new more like this query which uses the "_all" field.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisQueryBuilder.#ctor(System.String[])">
+            <summary>
+            Sets the field names that will be used when generating the 'More Like This' query.
+            </summary>
+            <param name="fields">The field names that will be used when generating the 'More Like This' query.</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisQueryBuilder.LikeText(System.String)">
+            <summary>
+            The text to use in order to find documents that are "like" this.
+            </summary>
+            <param name="likeText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisQueryBuilder.PercentTermsToMatch(System.Single)">
+            <summary>
+            The percentage of terms to match. Defaults to <tt>0.3</tt>.
+            </summary>
+            <param name="percentTermsToMatch"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisQueryBuilder.MinTermFreq(System.Int32)">
+            <summary>
+            The frequency below which terms will be ignored in the source doc. The default
+            frequency is <tt>2</tt>.
+            </summary>
+            <param name="minTermFreq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisQueryBuilder.MaxQueryTerms(System.Int32)">
+            <summary>
+            Sets the maximum number of query terms that will be included in any generated query.
+            Defaults to <tt>25</tt>.
+            </summary>
+            <param name="maxQueryTerms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisQueryBuilder.StopWords(System.String[])">
+             <summary>
+             Set the set of stopwords.
+            
+             <p>Any word in this set is considered "uninteresting" and ignored. Even if your Analyzer allows stopwords, you
+             might want to tell the MoreLikeThis code to ignore them, as for the purposes of document similarity it seems
+             reasonable to assume that "a stop word is never interesting"</p>
+             </summary>
+             <param name="stopWords"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisQueryBuilder.MinDocFreq(System.Int32)">
+            <summary>
+            Sets the frequency at which words will be ignored which do not occur in at least this
+            many docs. Defaults to <tt>5</tt>.
+            </summary>
+            <param name="minDocFreq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisQueryBuilder.MaxDocFreq(System.Int32)">
+            <summary>
+            Set the maximum frequency in which words may still appear. Words that appear
+            in more than this many docs will be ignored. Defaults to unbounded.
+            </summary>
+            <param name="maxDocFreq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisQueryBuilder.MinWordLen(System.Int32)">
+            <summary>
+            Sets the minimum word length below which words will be ignored. Defaults
+            to <tt>0</tt>.
+            </summary>
+            <param name="minWordLen"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisQueryBuilder.MaxWordLen(System.Int32)">
+            <summary>
+            Sets the maximum word length above which words will be ignored. Defaults to
+            unbounded (<tt>0</tt>).
+            </summary>
+            <param name="maxWordLen"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisQueryBuilder.BoostTerms(System.Single)">
+            <summary>
+            Sets the boost factor to use when boosting terms. Defaults to <tt>1</tt>.
+            </summary>
+            <param name="boostTerms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.MoreLikeThisQueryBuilder.Analyzer(System.String)">
+            <summary>
+            The analyzer that will be used to analyze the text. Defaults to the analyzer associated with the fied.
+            </summary>
+            <param name="analyzer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NestedQueryBuilder.ScoreMode(System.String)">
+            <summary>
+            The score mode.
+            </summary>
+            <param name="scoreMode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.NestedQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.PrefixQueryBuilder">
+            <summary>
+            A Query that matches documents containing terms with a specified prefix.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.PrefixQueryBuilder.#ctor(System.String,System.String)">
+            <summary>
+            A Query that matches documents containing terms with a specified prefix.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="prefix">The prefix query</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.PrefixQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.QueryStringQueryBuilder">
+            <summary>
+            A query that parses a query string and runs it. There are two modes that this operates. The first,
+            when no field is added (using {@link #field(string)}, will run the query once and non prefixed fields
+            will use the {@link #defaultField(string)} set. The second, when one or more fields are added
+            (using {@link #field(string)}), will run the parsed query against the provided fields, and combine
+            them either using DisMax or a plain boolean query (see {@link #useDisMax(boolean)}).
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.DefaultField(System.String)">
+            <summary>
+            The default field to run against when no prefix field is specified. Only relevant when
+            not explicitly adding fields the query string will run against.
+            </summary>
+            <param name="defaultField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.Field(System.String)">
+            <summary>
+            Adds a field to run the query string against.
+            </summary>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.Field(System.String,System.Single)">
+            <summary>
+            Adds a field to run the query string against with a specific boost.
+            </summary>
+            <param name="field"></param>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.UseDisMax(System.Boolean)">
+            <summary>
+            When more than one field is used with the query string, should queries be combined using
+            dis max, or boolean query. Defaults to dis max (<tt>true</tt>).
+            </summary>
+            <param name="useDisMax"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.TieBreaker(System.Single)">
+            <summary>
+            When more than one field is used with the query string, and combined queries are using
+            dis max, control the tie breaker for it.
+            </summary>
+            <param name="tieBreaker"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.DefaultOperator(Nest.Operator)">
+             <summary>
+             Sets the boolean operator of the query parser used to parse the query string.
+            
+             In default mode ({@link FieldQueryBuilder.Operator#OR}) terms without any modifiers
+             are considered optional: for example <code>capital of Hungary</code> is equal to
+             <code>capital OR of OR Hungary</code>.
+            
+             In {@link FieldQueryBuilder.Operator#AND} mode terms are considered to be in conjunction: the
+             above mentioned query is parsed as <code>capital AND of AND Hungary</code>
+             </summary>
+             <param name="defaultOperator"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.Analyzer(System.String)">
+            <summary>
+            The optional analyzer used to analyze the query string. Note, if a field has search analyzer
+            defined for it, then it will be used automatically. Defaults to the smart search analyzer.
+            </summary>
+            <param name="analyzer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.AutoGeneratePhraseQueries(System.Boolean)">
+            <summary>
+            Set to true if phrase queries will be automatically generated
+            when the analyzer returns more than one term from whitespace
+            delimited text.
+            NOTE: this behavior may not be suitable for all languages.
+            
+            Set to false if phrase queries should only be generated when
+            surrounded by double quotes.
+            </summary>
+            <param name="autoGeneratePhraseQueries"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.AllowLeadingWildcard(System.Boolean)">
+            <summary>
+            Should leading wildcards be allowed or not. Defaults to <tt>true</tt>.
+            </summary>
+            <param name="allowLeadingWildcard"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.LowercaseExpandedTerms(System.Boolean)">
+            <summary>
+            Whether terms of wildcard, prefix, fuzzy and range queries are to be automatically
+            lower-cased or not.  Default is <tt>true</tt>.
+            </summary>
+            <param name="lowercaseExpandedTerms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.EnablePositionIncrements(System.Boolean)">
+             <summary>
+             Set to <tt>true</tt> to enable position increments in result query. Defaults to
+             <tt>true</tt>.
+            
+             When set, result phrase and multi-phrase queries will be aware of position increments.
+             Useful when e.g. a StopFilter increases the position increment of the token that follows an omitted token.
+             </summary>
+             <param name="enablePositionIncrements"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.FuzzyMinSim(System.Single)">
+            <summary>
+            Set the minimum similarity for fuzzy queries. Default is 0.5f.
+            </summary>
+            <param name="fuzzyMinSim"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.FuzzyPrefixLength(System.Int32)">
+            <summary>
+             Set the minimum similarity for fuzzy queries. Default is 0.5f.
+            </summary>
+            <param name="fuzzyPrefixLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.PhraseSlop(System.Int32)">
+            <summary>
+            Sets the default slop for phrases.  If zero, then exact phrase matches
+            are required. Default value is zero.
+            </summary>
+            <param name="phraseSlop"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.AnalyzeWildcard(System.Boolean)">
+            <summary>
+            Set to <tt>true</tt> to enable analysis on wildcard and prefix queries.
+            </summary>
+            <param name="analyzeWildcard"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.QueryStringQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+             weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.RangeQueryBuilder">
+            <summary>
+            A Query that matches documents within an range of terms.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.#ctor(System.String)">
+            <summary>
+            A Query that matches documents within an range of terms.
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.From(System.Object)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.From(System.String)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.From(System.Int32)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.From(System.Int64)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.From(System.Single)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.From(System.Double)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Gt(System.Object)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Gt(System.String)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Gt(System.Int32)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Gt(System.Int64)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Gt(System.Single)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Gt(System.Double)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Gte(System.Object)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Gte(System.String)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Gte(System.Int32)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Gte(System.Int64)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Gte(System.Single)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Gte(System.Double)">
+            <summary>
+            The from part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.To(System.Object)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.To(System.String)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.To(System.Int32)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.To(System.Single)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.To(System.Int64)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.To(System.Double)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Lt(System.Object)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Lt(System.String)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Lt(System.Int32)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Lt(System.Single)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Lt(System.Int64)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Lt(System.Double)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Lte(System.Object)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Lte(System.String)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Lte(System.Int32)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Lte(System.Single)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Lte(System.Int64)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Lte(System.Double)">
+            <summary>
+            The to part of the range query. Null indicates unbounded.
+            </summary>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.IncludeLower(System.Boolean)">
+            <summary>
+            Should the lower bound be included or not. Defaults to <tt>true</tt>.
+            </summary>
+            <param name="includeLower"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.IncludeUpper(System.Boolean)">
+            <summary>
+            Should the upper bound be included or not. Defaults to <tt>true</tt>.
+            </summary>
+            <param name="includeUpper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.RangeQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsQueryBuilder.#ctor(System.String,System.Object[])">
+            <summary>
+            A query for a field based on several terms matching on any of them.
+            </summary>
+            <param name="name">The field name</param>
+            <param name="values">The terms</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsQueryBuilder.MinimumMatch(System.Int32)">
+            <summary>
+            Sets the minimum number of matches across the provided terms. Defaults to <tt>1</tt>.
+            </summary>
+            <param name="minimumMatch"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TermsQueryBuilder.DisableCoord(System.Boolean)">
+            <summary>
+            Disables <tt>Similarity#coord(int,int)</tt> in scoring. Defualts to <tt>false</tt>.
+            </summary>
+            <param name="disableCoord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TopChildrenQueryBuilder.Scope(System.String)">
+            <summary>
+            The scope of the query, which can later be used, for example, to run facets against the child docs that
+            matches the query.
+            </summary>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TopChildrenQueryBuilder.Score(System.String)">
+            <summary>
+            How to compute the score. Possible values are: <tt>max</tt>, <tt>sum</tt>, or <tt>avg</tt>. Defaults
+            to <tt>max</tt>.
+            </summary>
+            <param name="score"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TopChildrenQueryBuilder.Factor(System.Int32)">
+            <summary>
+            Controls the multiplication factor of the initial hits required from the child query over the main query request.
+            Defaults to 5.
+            </summary>
+            <param name="factor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TopChildrenQueryBuilder.IncrementalFactor(System.Int32)">
+            <summary>
+            Sets the incremental factor when the query needs to be re-run in order to fetch more results. Defaults to 2.
+            </summary>
+            <param name="incrementalFactor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.TopChildrenQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.WildcardQueryBuilder">
+            <summary>
+            Implements the wildcard search query. Supported wildcards are <tt>*</tt>, which
+            matches any character sequence (including the empty one), and <tt>?</tt>,
+            which matches any single character. Note this query can be slow, as it
+            needs to iterate over many terms. In order to prevent extremely slow WildcardQueries,
+            a Wildcard term should not start with one of the wildcards <tt>*</tt> or
+            <tt>?</tt>.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.WildcardQueryBuilder.#ctor(System.String,System.String)">
+            <summary>
+            Implements the wildcard search query. Supported wildcards are <tt>*</tt>, which
+            matches any character sequence (including the empty one), and <tt>?</tt>,
+            which matches any single character. Note this query can be slow, as it
+            needs to iterate over many terms. In order to prevent extremely slow WildcardQueries,
+            a Wildcard term should not start with one of the wildcards <tt>*</tt> or
+            </summary>
+            <param name="name">The field name</param>
+            <param name="query">The wildcard query string</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.WildcardQueryBuilder.Boost(System.Single)">
+            <summary>
+            Sets the boost for this query.  Documents matching this query will (in addition to the normal
+            weightings) have their score multiplied by the boost provided.
+            </summary>
+            <param name="boost"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.WrapperQueryBuilder">
+            <summary>
+            A Query builder which allows building a query thanks to a JSON string or binary data. This is useful when you want
+            to use the Java Builder API but still have JSON query strings at hand that you want to combine with other
+            query builders.
+            
+            Example usage in a boolean query :
+            <pre>
+            {@code
+                 BoolQueryBuilder bool = new BoolQueryBuilder();
+                 bool.must(new WrapperQueryBuilder("{\"term\": {\"field\":\"value\"}}");
+                 bool.must(new TermQueryBuilder("field2","value2");
+            }
+            </pre>
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.WrapperQueryBuilder.#ctor(System.String)">
+            <summary>
+            Builds a JSONQueryBuilder using the provided JSON query string.
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="T:Nest.Dsl.Factory.SearchBuilder">
+            <summary>
+            A search source builder allowing to easily build search source. Simple construction
+            using {@link org.elasticsearch.search.builder.SearchSourceBuilder#searchSource()}.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.SearchSource">
+            <summary>
+             A static factory method to construct a new search source.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Builder">
+            <summary>
+             A static factory method to construct a new search builder.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Highlight">
+            <summary>
+            A static factory method to construct new search highlights.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Query(Nest.Dsl.Factory.IQueryBuilder)">
+            <summary>
+            Constructs a new search source builder with a search query.
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Query(System.Byte[])">
+            <summary>
+            Constructs a new search source builder with a raw search query.
+            </summary>
+            <param name="queryBinary"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Query(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Constructs a new search source builder with a raw search query.
+            </summary>
+            <param name="queryBinary"></param>
+            <param name="queryBinaryOffset"></param>
+            <param name="queryBinaryLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Query(System.String)">
+            <summary>
+            Constructs a new search source builder with a raw search query.
+            </summary>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Filter(System.String)">
+            <summary>
+            Sets a filter on the query executed that only applies to the search query
+            (and not facets for example). 
+            </summary>
+            <param name="filterString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Filter(System.Byte[])">
+            <summary>
+            Sets a filter on the query executed that only applies to the search query
+            (and not facets for example). 
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Filter(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Sets a filter on the query executed that only applies to the search query
+            (and not facets for example).
+            </summary>
+            <param name="filterBinary"></param>
+            <param name="filterBinaryOffset"></param>
+            <param name="filterBinaryLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.From(System.Int32)">
+            <summary>
+            From index to start the search from. Defaults to <tt>0</tt>.
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Size(System.Int32)">
+            <summary>
+            The number of search hits to return. Defaults to <tt>10</tt>.
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.MinScore(System.Single)">
+            <summary>
+            Sets the minimum score below which docs will be filtered out.
+            </summary>
+            <param name="minScore"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Explain(System.Boolean)">
+            <summary>
+            Should each {@link org.elasticsearch.search.SearchHit} be returned with an
+            explanation of the hit (ranking).
+            </summary>
+            <param name="explain"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Version(System.Boolean)">
+            <summary>
+            Should each {@link org.elasticsearch.search.SearchHit} be returned with a version
+            associated with it.
+            </summary>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Sort(System.String,Nest.SortOrder)">
+            <summary>
+            Adds a sort against the given field name and the sort ordering.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="order">The sort ordering</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Sort(System.String)">
+            <summary>
+            Add a sort against the given field name.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Sort(Nest.Dsl.Factory.ISortBuilder)">
+            <summary>
+            Adds a sort builder.
+            </summary>
+            <param name="sort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.TrackScores(System.Boolean)">
+            <summary>
+            Applies when sorting, and controls if scores will be tracked as well. Defaults to
+            <tt>false</tt>.
+            </summary>
+            <param name="trackScores"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Facet(Nest.Dsl.Factory.AbstractFacetBuilder)">
+            <summary>
+            Add a facet to perform as part of the search.
+            </summary>
+            <param name="facet"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Facets(System.Byte[])">
+            <summary>
+            Sets raw (json) facets.
+            </summary>
+            <param name="facetsBinary"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Facets(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Sets raw (json) facets.
+            </summary>
+            <param name="facetsBinary"></param>
+            <param name="facetBinaryOffset"></param>
+            <param name="facetBinaryLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Highlighter">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Highlight(Nest.Dsl.Factory.HighlightBuilder)">
+            <summary>
+            Adds highlight to perform as part of the search.
+            </summary>
+            <param name="highlight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.NoFields">
+            <summary>
+            Sets no fields to be loaded, resulting in only id and type to be returned per field.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Fields(System.Collections.Generic.List{System.String})">
+            <summary>
+            Sets the fields to load and return as part of the search request. If none are specified,
+            the source of the document will be returned.
+            </summary>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Fields(System.String[])">
+            <summary>
+            Sets the fields to load and return as part of the search request. If none are specified,
+            the source of the document will be returned.
+            </summary>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Field(System.String)">
+            <summary>
+            Adds a field to load and return (note, it must be stored) as part of the search request.
+            If none are specified, the source of the document will be return.
+            </summary>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.ScriptField(System.String,System.String)">
+            <summary>
+            Adds a script field under the given name with the provided script.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="script">The script</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.ScriptField(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Adds a script field.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="script">The script to execute</param>
+            <param name="params">The script parameters</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.ScriptField(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Adds a script field.
+            </summary>
+            <param name="name">The name of the field</param>
+            <param name="lang">The language of the script</param>
+            <param name="script">The script to execute</param>
+            <param name="params">The script parameters (can be <tt>null</tt>)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.IndexBoost(System.String,System.Single)">
+            <summary>
+            Sets the boost a specific index will receive when the query is executeed against it.
+            </summary>
+            <param name="index">The index to apply the boost against</param>
+            <param name="indexBoost">The boost to apply to the index</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SearchBuilder.Stats(System.String[])">
+            <summary>
+            The stats groups this request will be aggregated under.
+            </summary>
+            <param name="statsGroups"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SortFactory.ScoreSort">
+            <summary>
+            Constructs a new score sort.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SortFactory.FieldSort(System.String)">
+            <summary>
+            Constructs a new field based sort.
+            </summary>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SortFactory.ScriptSort(System.String,System.String)">
+            <summary>
+            Constructs a new script based sort.
+            </summary>
+            <param name="script">The script to use</param>
+            <param name="type">The type, can either be "string" or "number"</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.SortFactory.GeoDistanceSort(System.String)">
+            <summary>
+            A geo distance based sort.
+            </summary>
+            <param name="fieldName">The geo point like field name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.ISortBuilder.Order(Nest.SortOrder)">
+            <summary>
+            The order of sorting. Defaults to {@link SortOrder#ASC}.
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.ISortBuilder.Missing(System.Object)">
+            <summary>
+            Sets the value when a field is missing in a doc. Can also be set to <tt>_last</tt> or
+            <tt>_first</tt> to sort missing last or first respectively.
+            </summary>
+            <param name="missing"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldSortBuilder.IgnoreUnmapped(System.Boolean)">
+            <summary>
+            Sets if the field does not exists in the index, it should be ignored and not sorted by or not. Defaults
+            to <tt>false</tt> (not ignoring).
+            </summary>
+            <param name="ignoreUnmapped"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.FieldSortBuilder.NestedFilter(Nest.Dsl.Factory.TermFilterBuilder)">
+            <summary>
+            Sets sort nested filter
+            </summary>
+            <param name="nestedFilter">nested filter</param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.GeoDistanceSortBuilder">
+            <summary>
+            A geo distance based sorting on a geo point like field.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceSortBuilder.#ctor(System.String)">
+            <summary>
+            Constructs a new distance based sort on a geo point like field.
+            </summary>
+            <param name="fieldName">The geo point like field name.</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceSortBuilder.Point(System.Double,System.Double)">
+            <summary>
+            The point to create the range distance facets from.
+            </summary>
+            <param name="lat">Latitude.</param>
+            <param name="lon">Longitude</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceSortBuilder.Geohash(System.String)">
+            <summary>
+            The geohash of the geo point to create the range distance facets from.
+            </summary>
+            <param name="geohash"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceSortBuilder.GeoDistance(Nest.GeoDistance)">
+            <summary>
+            The geo distance type used to compute the distance.
+            </summary>
+            <param name="geoDistance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceSortBuilder.Unit(Nest.DistanceUnit)">
+            <summary>
+            The distance unit to use. Defaults to KILOMETERS.
+            </summary>
+            <param name="unit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceSortBuilder.Order(Nest.SortOrder)">
+            <summary>
+            The order of sorting. Defaults to ASC.
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.GeoDistanceSortBuilder.Missing(System.Object)">
+            <summary>
+            Not relevant.
+            </summary>
+            <param name="missing"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.ScoreSortBuilder">
+            <summary>
+            A sort builder allowing to sort by score.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.ScoreSortBuilder.Order(Nest.SortOrder)">
+            <summary>
+            The order of sort scoring. By default, its DESC.
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nest.Dsl.Factory.ScriptSortBuilder">
+            <summary>
+            Script sort builder allows to sort based on a custom script expression.
+            </summary>
+        </member>
+        <member name="M:Nest.Dsl.Factory.ScriptSortBuilder.#ctor(System.String,System.String)">
+            <summary>
+            Constructs a script sort builder with the script and the type.
+            </summary>
+            <param name="script">The script to use.</param>
+            <param name="type">The type, can either be "string" or "number".</param>
+        </member>
+        <member name="M:Nest.Dsl.Factory.ScriptSortBuilder.Param(System.String,System.Object)">
+            <summary>
+             A parameter that will be passed to the script.
+             </summary>
+             <param name="name">The name of the script parameter.</param>
+             <param name="value">The value of the script parameter.</param>
+             <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.ScriptSortBuilder.Lang(System.String)">
+            <summary>
+            The language of the script.
+            </summary>
+            <param name="lang"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.ScriptSortBuilder.Order(Nest.SortOrder)">
+            <summary>
+            Sets the sort order.
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nest.Dsl.Factory.ScriptSortBuilder.Missing(System.Object)">
+            <summary>
+            Not really relevant.
+            </summary>
+            <param name="missing"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

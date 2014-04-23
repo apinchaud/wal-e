@@ -1,0 +1,2 @@
+﻿V2.1.0
+- Rename some classes/interfaces from SmileXYZ to XYZ

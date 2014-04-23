@@ -1,0 +1,36 @@
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\obj\Debug\Wale.Console.csprojResolveAssemblyReference.cache
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\Wale.Console.exe.config
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\Wale.Console.exe
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\Wale.Console.pdb
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\DLL_Wale.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\NLog.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\DLL_Wale.pdb
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\NLog.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\obj\Debug\Wale.Console.exe
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\obj\Debug\Wale.Console.pdb
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\NLog.config
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\Newtonsoft.Json.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\Newtonsoft.Json.xml
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\Json.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\Json.pdb
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\Nest.dll
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\Nest.pdb
+C:\Users\marvin\Documents\Visual Studio 2013\Projects\WALE\Wale.Console\bin\Debug\Nest.xml
+D:\WALE\WALE\Wale.Console\bin\Debug\NLog.config
+D:\WALE\WALE\Wale.Console\bin\Debug\Wale.Console.exe.config
+D:\WALE\WALE\Wale.Console\bin\Debug\Wale.Console.exe
+D:\WALE\WALE\Wale.Console\bin\Debug\Wale.Console.pdb
+D:\WALE\WALE\Wale.Console\bin\Debug\DLL_Wale.dll
+D:\WALE\WALE\Wale.Console\bin\Debug\Json.dll
+D:\WALE\WALE\Wale.Console\bin\Debug\Nest.dll
+D:\WALE\WALE\Wale.Console\bin\Debug\Newtonsoft.Json.dll
+D:\WALE\WALE\Wale.Console\bin\Debug\NLog.dll
+D:\WALE\WALE\Wale.Console\bin\Debug\DLL_Wale.pdb
+D:\WALE\WALE\Wale.Console\bin\Debug\Json.pdb
+D:\WALE\WALE\Wale.Console\bin\Debug\Nest.pdb
+D:\WALE\WALE\Wale.Console\bin\Debug\Nest.xml
+D:\WALE\WALE\Wale.Console\bin\Debug\Newtonsoft.Json.xml
+D:\WALE\WALE\Wale.Console\bin\Debug\NLog.xml
+D:\WALE\WALE\Wale.Console\obj\Debug\Wale.Console.exe
+D:\WALE\WALE\Wale.Console\obj\Debug\Wale.Console.pdb
+D:\WALE\WALE\Wale.Console\obj\Debug\Wale.Console.csprojResolveAssemblyReference.cache

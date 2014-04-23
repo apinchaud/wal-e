@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Smile.Serialization</name>
+    </assembly>
+    <members>
+        <member name="T:Smile.Serialization.Serializers.ISerializer">
+            <summary>
+            Serialization interface
+            </summary>
+        </member>
+        <member name="M:Smile.Serialization.Serializers.ISerializer.Serialize(System.Object)">
+            <summary>
+            Serialize an object to string based on selected serialization type
+            </summary>
+        </member>
+        <member name="M:Smile.Serialization.Serializers.ISerializer.Deserialize(System.String)">
+            <summary>
+            Deserialize a serialized string to object based on selected serialization type
+            </summary>
+        </member>
+        <member name="M:Smile.Serialization.Serializers.ISerializer.Deserialize``1(System.String)">
+            <summary>
+            Deserialize a serialized string to object of type T based on selected serialization type
+            </summary>
+        </member>
+        <member name="T:Smile.Serialization.SerializerBuilder">
+            <summary>
+            Build ISmileSerializer object
+            </summary>
+        </member>
+        <member name="F:Smile.Serialization.SerializerType.Base64">
+            <summary>
+            Serializes to Json, then convert to Base64String
+            </summary>
+        </member>
+        <member name="F:Smile.Serialization.SerializerType.DacoJson">
+            <summary>
+            Serializes to Json using DataContract serializer which provided by .Net
+            </summary>
+        </member>
+        <member name="F:Smile.Serialization.SerializerType.Json">
+            <summary>
+            Serializes to Json using Newtonsoft.Json library
+            </summary>
+        </member>
+    </members>
+</doc>
